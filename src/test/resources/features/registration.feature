@@ -13,7 +13,7 @@ Funcionalidade:  My Account - Registration
     E Enter your own password in password textbox
     E Click on Register button
     Entao User will be registered successfully
-    E will be navigated to the Home page
+    E Will be navigated to the Home page
 
   @signinOutlin
   Esquema do Cenario: Registration with <identificacao>

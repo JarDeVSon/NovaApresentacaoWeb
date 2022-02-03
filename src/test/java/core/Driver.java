@@ -35,6 +35,7 @@ public class Driver {
                 startEdge();
         }
         wait = new WebDriverWait(driver,20);
+        driver.manage().window().maximize();
     }
 
     private void startChrome() {
@@ -62,7 +63,7 @@ public class Driver {
     public static void printScreenshots(String step) throws IOException {
         numPrint++;
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String path = directory.getPath() + "/" + step + ".png";
+        String path = directory.getPath() + "/" + numPrint + " - " + step + ".png";
         FileUtils.copyFile(file, new File(path));
     }
     public static void visibilityOf(WebElement element){

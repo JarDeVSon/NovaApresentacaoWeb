@@ -29,7 +29,7 @@ public class RegisterPage {
         registerMaps.inputRegister.click();
     }
     public String GetMessage(String message) {
-
+        Driver.visibilityOf(registerMaps.textErrorMessage);
        return registerMaps.textErrorMessage.getText();
     }
 }
