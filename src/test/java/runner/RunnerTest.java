@@ -15,7 +15,7 @@ import java.io.IOException;
         publish = true,
         plugin = {"html:target/report/report.html", "pretty", "json:target/report/cucumber.json"},
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@signin"
+        tags = "@regressivo"
 
 )
 public class RunnerTest {
