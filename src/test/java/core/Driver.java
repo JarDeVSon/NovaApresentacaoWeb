@@ -39,7 +39,11 @@ public class Driver {
     }
 
     private void startChrome() {
-        System.setProperty("webdriver.chrome.driver", "src/test/java/core/chromedriver"+".exe");
+        if (System.getProperty("os.name").contains("Windows")){
+            System.setProperty("webdriver.chrome.driver", "src/test/java/core/chromedriver.exe");
+        } else {
+            System.setProperty("webdriver.chrome.driver", "src/test/java/core/chromedriver");
+        }
         //WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         boolean headless = Boolean.parseBoolean(System.getProperty("headless"));
