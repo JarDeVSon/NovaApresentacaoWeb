@@ -34,17 +34,11 @@ public class Driver {
             case EDGE:
                 startEdge();
         }
-        wait = new WebDriverWait(driver,20);
+        wait = new WebDriverWait(driver, 20);
         driver.manage().window().maximize();
     }
 
     private void startChrome() {
-       if (System.getProperty("os.name").contains("Windows")){
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-        } else {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
-        }
-
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         boolean headless = Boolean.parseBoolean(System.getProperty("headless"));
@@ -53,6 +47,7 @@ public class Driver {
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().setSize(new Dimension(1280, 720));
     }
+
     private void startFirefox() {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
@@ -72,7 +67,8 @@ public class Driver {
         String path = directory.getPath() + "/" + numPrint + " - " + step + ".png";
         FileUtils.copyFile(file, new File(path));
     }
-    public static void visibilityOf(WebElement element){
+
+    public static void visibilityOf(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
