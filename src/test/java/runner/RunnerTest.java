@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/",
         glue = "steps",
         monochrome = true,
         publish = true,
