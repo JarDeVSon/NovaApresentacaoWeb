@@ -19,9 +19,6 @@ public class RegistrationSteps {
     Faker faker = new Faker();
     HomePage homePage = new HomePage();
 
-
-
-
     @Dado("Open the browser and Enter the URL {string}")
     public void openTheBrowserAndEnterTheURL(String url) throws Exception {
         try {
